@@ -1,8 +1,8 @@
 # `README.md` for [athena](https://github.com/Ai-Yukino/athena)
 
-<center>
+<div style="display:flex; justify-content: center">
     <img src="images/athena.png" style="width:80%; border-radius: 2%;">
-</center>
+</div>
 
 [🖼 Jeremy Bezanger | Unsplash](https://unsplash.com/photos/utp3lWnU4nA)
 
