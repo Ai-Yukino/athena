@@ -1,6 +1,6 @@
 # `README.md` for [athena](https://github.com/Ai-Yukino/athena)
 
-<div style="display:flex; justify-content: center">
+<div align="center">
     <img src="images/athena.png" style="width:80%; border-radius: 2%;">
 </div>
 
