@@ -8,7 +8,7 @@
 
 ---
 
-Web scraper of the [official Olympics website](https://olympics.com/en/) for
+Web scraper for the [official Olympics website](https://olympics.com/en/):
 
 - [Tokyo 2020 results](https://olympics.com/en/olympic-games/tokyo-2020/results), and
 - [Beijing 2022 results](https://olympics.com/en/olympic-games/beijing-2022).
