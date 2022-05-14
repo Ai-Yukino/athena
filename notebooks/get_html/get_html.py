@@ -14,7 +14,7 @@
 # ---
 
 # + [markdown] tags=[]
-# # `html.ipynb`
+# # `get_html.ipynb`
 #
 # <center>
 #     <img src="images/html.png" style="width:60%; border-radius: 2%">
@@ -46,12 +46,12 @@ urls = {
     "2022_medal": base_url + "List_of_2022_Winter_Olympics_medal_winners",
     "LGBT_athletes": base_url + "List_of_LGBT_Olympians",
 }
-base_path = "../data/html/"
-log_columns = "Request_date,Request_URL\n"
+base_path = "../../data/html/"
+log_columns = "Request_date\tRequest_URL\n"
 
 # ### 🌸🌸 Make log file
 
-with open(base_path + "log.csv", "a") as log:
+with open(base_path + "log.tsv", "a") as log:
     log.write(log_columns)
     log.close()
 
@@ -64,8 +64,8 @@ for key in list(urls):
 
     with open(base_path + key + ".html", "x") as html:
         html.write(str(soup))
-        with open(base_path + "log.csv", "a") as log:
-            log.write(f"{request.getheader('Date')},{url}\n")
+        with open(base_path + "log.tsv", "a") as log:
+            log.write(f"{request.getheader('Date')}\t{url}\n")
             log.close()
         html.close()
 
