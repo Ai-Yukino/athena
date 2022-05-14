@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>html</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>get_html</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14596,7 +14596,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="html.ipynb"><code>html.ipynb</code><a class="anchor-link" href="#html.ipynb">&#182;</a></h1><center>
+<h1 id="get_html.ipynb"><code>get_html.ipynb</code><a class="anchor-link" href="#get_html.ipynb">&#182;</a></h1><center>
     <img src="images/html.png" style="width:60%; border-radius: 2%">
 </center><p><a href="https://unsplash.com/photos/THW3r7A9sKk">🖼 Julia Barbosa | Unsplash</a></p>
 <hr>
@@ -14673,8 +14673,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <span class="s2">&quot;2022_medal&quot;</span><span class="p">:</span> <span class="n">base_url</span> <span class="o">+</span> <span class="s2">&quot;List_of_2022_Winter_Olympics_medal_winners&quot;</span><span class="p">,</span>
     <span class="s2">&quot;LGBT_athletes&quot;</span><span class="p">:</span> <span class="n">base_url</span> <span class="o">+</span> <span class="s2">&quot;List_of_LGBT_Olympians&quot;</span><span class="p">,</span>
 <span class="p">}</span>
-<span class="n">base_path</span> <span class="o">=</span> <span class="s2">&quot;../data/html/&quot;</span>
-<span class="n">log_columns</span> <span class="o">=</span> <span class="s2">&quot;Request_date,Request_URL</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">base_path</span> <span class="o">=</span> <span class="s2">&quot;../../data/html/&quot;</span>
+<span class="n">log_columns</span> <span class="o">=</span> <span class="s2">&quot;Request_date</span><span class="se">\t</span><span class="s2">Request_URL</span><span class="se">\n</span><span class="s2">&quot;</span>
 </pre></div>
 
      </div>
@@ -14698,10 +14698,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">base_path</span> <span class="o">+</span> <span class="s2">&quot;log.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">log</span><span class="p">:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">base_path</span> <span class="o">+</span> <span class="s2">&quot;log.tsv&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">log</span><span class="p">:</span>
     <span class="n">log</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">log_columns</span><span class="p">)</span>
     <span class="n">log</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
@@ -14727,7 +14727,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">urls</span><span class="p">):</span>
@@ -14737,8 +14737,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">base_path</span> <span class="o">+</span> <span class="n">key</span> <span class="o">+</span> <span class="s2">&quot;.html&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">html</span><span class="p">:</span>
         <span class="n">html</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">soup</span><span class="p">))</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">base_path</span> <span class="o">+</span> <span class="s2">&quot;log.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">log</span><span class="p">:</span>
-            <span class="n">log</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">request</span><span class="o">.</span><span class="n">getheader</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">base_path</span> <span class="o">+</span> <span class="s2">&quot;log.tsv&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">log</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">request</span><span class="o">.</span><span class="n">getheader</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="n">log</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
         <span class="n">html</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
