@@ -49,6 +49,9 @@ urls = {
 base_path = "../../data/html/"
 log_columns = "Request_date\tRequest_URL\n"
 
+req = urllib.request.urlopen(urls["LGBT_athletes"])
+req.getheaders()
+
 # ### 🌸🌸 Make log file
 
 with open(base_path + "log.tsv", "a") as log:
