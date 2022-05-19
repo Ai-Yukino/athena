@@ -8,6 +8,8 @@
 
 ---
 
+Follow the `README.md` [here](https://github.com/Ai-Yukino/mira-bing/) to generate `.ipynb` from the `.py` files in this notebook.
+
 💧🔥 Extracting data from the following Wikipedia pages:
 
 - [List of 2020 Summer Olympics medal winners](https://en.wikipedia.org/wiki/List_of_2020_Summer_Olympics_medal_winners)
