@@ -16,7 +16,7 @@
 # # `table_summer_2020.ipynb`
 #
 # <center>
-#     <img src="../../images/table_summer_2020/treasure.png" style="width:60%; border-radius:2%;">
+#     <img src="../../images/table_summer_2020/table_summer_2020.png" style="width:60%; border-radius:2%;">
 # </center>
 #
 # [🖼 Nagara Oyodo | Unsplash](https://unsplash.com/photos/WwqP5haHjmY)
