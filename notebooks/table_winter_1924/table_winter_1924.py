@@ -13,17 +13,17 @@
 #     name: python3
 # ---
 
-# # `table_summer_2020.ipynb`
+# # `table_winter_1924.ipynb`
 #
 # <center>
-#     <img src="../../images/table_summer_2020/table_summer_2020.png" style="width:60%; border-radius:2%;">
+#     <img src="../../images/table_winter_1924/table_winter_1924.png" style="width:60%; border-radius:2%;">
 # </center>
 #
-# [🖼 Nagara Oyodo | Unsplash](https://unsplash.com/photos/WwqP5haHjmY)
+# [🖼 Yann Lauener | Unsplash](https://unsplash.com/photos/E8W_F1jx184)
 #
 # ---
 #
-# [📝 2020 Summer Olympics medal table | Wikipedia](https://en.wikipedia.org/wiki/2020_Summer_Olympics_medal_table)
+# [📝 1924 Winter Olympics medal table | Wikipedia](https://en.wikipedia.org/wiki/1924_Winter_Olympics_medal_table)
 
 # ## 🐍 Python imports 🐍
 
@@ -37,10 +37,10 @@ from bs4 import BeautifulSoup, SoupStrainer
 # ## ❄ Path variables ❄
 
 # +
-name = "table_summer_2020"
+name = "table_winter_1924"
 
 wikipedia = "https://en.wikipedia.org/wiki/"
-article = "2020_Summer_Olympics_medal_table"
+article = "1924_Winter_Olympics_medal_table"
 url = wikipedia + article
 
 folder_html = "../../data/html/"
@@ -68,15 +68,7 @@ req_headers = pd.Series(dictionary)
 columns_log = "file\treq_date\treq_last-modified\turl\n"
 # -
 
-# ## ❄ Inspect original website ❄
-#
-# <center>
-#     <img src="../../images/table_summer_2020/inspect-1a.png" style="width:60%; border-radius:20px;">
-# </center>
-#
-# [🖼 2020 Summer Olympics medal table | Wikipedia](https://en.wikipedia.org/wiki/2020_Summer_Olympics_medal_table)
-
-# ## 🌸 Make soup 🌸
+# ## ❄ Make soup ❄
 
 strainer = SoupStrainer(
     "table",
@@ -87,7 +79,7 @@ strainer = SoupStrainer(
 )
 soup = BeautifulSoup(req, features="lxml", from_encoding="utf-8", parse_only=strainer)
 
-# ## ❄ Save `html` snippet ❄
+# ## 🌸 Save `html` snippet 🌸
 
 # + tags=[]
 with open(path_html, "x", encoding="utf-8") as file:
@@ -101,9 +93,9 @@ with open(path_html, "x", encoding="utf-8") as file:
     file.close()
 # -
 
-# ## ❄ `html` snippet -> `DataFrame` ❄
+# ## 🌸 `html` snippet -> `DataFrame` 🌸
 
-# ### ❄❄ Constructor variables
+# ### 🌸🌸 Constructor variables
 
 # +
 table = soup.tbody
@@ -116,7 +108,7 @@ cols = [e.get_text() for e in cols_ResultSet]
 zipped = zip(cols, [None] * len(cols))
 dict_ser = dict(zipped)
 
-# ### ❄❄ `Rank`
+# ### 🌸🌸 `Rank`
 
 es = table.select("td:first-child")
 listed = []
@@ -134,7 +126,7 @@ ser = pd.Series(listed)
 dict_ser["Rank"] = ser
 # -
 
-# ### ❄❄ `NOC`
+# ### 🌸🌸 `Nation`
 
 es = table.select("th[scope='row']:not([colspan='2']) > a")
 listed = []
@@ -145,10 +137,10 @@ for e in es:
     listed += [e.get_text()]
 
 ser = pd.Series(listed)
-dict_ser["NOC"] = ser
+dict_ser["Nation"] = ser
 # -
 
-# ### ❄❄ `Gold`
+# ### 🌸🌸 `Gold`
 
 es = table.select("td:not([style='font-weight:bold']):nth-last-of-type(4)")
 listed = []
@@ -163,7 +155,7 @@ ser = pd.Series(listed)
 dict_ser["Gold"] = ser
 # -
 
-# ### ❄❄ `Silver`
+# ### 🌸🌸 `Silver`
 
 es = table.select("td:not([style='font-weight:bold']):nth-last-of-type(3)")
 listed = []
@@ -178,7 +170,7 @@ ser = pd.Series(listed)
 dict_ser["Silver"] = ser
 # -
 
-# ### ❄❄ `Bronze`
+# ### 🌸🌸 `Bronze`
 
 es = table.select("td:not([style='font-weight:bold']):nth-last-of-type(2)")
 listed = []
@@ -193,7 +185,7 @@ ser = pd.Series(listed)
 dict_ser["Bronze"] = ser
 # -
 
-# ### ❄❄ `Total`
+# ### 🌸🌸 `Total`
 
 es = table.select("td:not([style='font-weight:bold']):nth-last-of-type(1)")
 listed = []
@@ -208,12 +200,12 @@ ser = pd.Series(listed)
 dict_ser["Total"] = ser
 # -
 
-# ### ❄❄ Construct `DataFrame`
+# ### 🌸🌸 Construct `DataFrame`
 
 df = pd.concat(dict_ser, axis=1)
 # df
 
-# ## 🌸 Export `csv` 🌸
+# ## ❄ Export `csv` ❄
 
 df.to_csv(path_csv, index=False)
 
